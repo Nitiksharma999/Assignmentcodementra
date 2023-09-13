@@ -1,0 +1,46 @@
+<div class="modal fade" id="exampleModaladdlog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Send mail</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action ="shareblog">
+            {% csrf_token %}
+            <div class="row align-items-center ">
+              <div class="col-lg-6">
+                <div class="mb-2">
+                  <label for="recipient-name" class="col-form-label">Please enter your Email</label>
+                  <input type="email" name ="sender_mail" class="form-control" id="recipient-name" required>
+                </div>
+              </div>
+                <div class="mb-2">
+                  <label for="recipient-name" class="col-form-label">Sender Name</label>
+                  <input type="text" name ="sender_name" class="form-control" id="recipient-name" required>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-2">
+                  <label for="clientname" class="col-form-label">Content</label>
+                  <textarea class="form-control comment-section" name="content" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                  
+                    </textarea>
+                </div>
+              </div>
+            </div>
+         
+           
+  
+  
+  
+  
+        </div>
+        <div class="modal-footer">
+         
+          <button type="submit" class="btn btn-primarys">Save</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>

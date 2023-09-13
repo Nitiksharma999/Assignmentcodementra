@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    img{
+        width: 40%;
+    }
+</style>
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Error 404 </strong> {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% for i in data %}
+   <h5 class="my-2"> {{i.title}} </h5>
+    <img src="{{i.image.url}}" class="img-thumbnail mx-3 my-3" alt=""><br>
+    <textarea class="border border-info mx-3 my-2"  name='name' style="width: 300px; height: 50px;">{{i.desc|slice:20}}.....</textarea>
+    <a href="{% url 'readmore' i.id  %}"> <button type="button" class="btn btn-dark mx-1">KNOW MORE</button></a><br>
+    <a href="{% url 'addcomment' %}"> <button type="button" class="btn btn-dark mx-1">Add comments</button></a><br>
+    <a href="{% url 'shareblog' %}"> <button type="button" class="btn btn-dark mx-1">Share blog</button></a><br>
+    <textarea class="border border-dark text-lg-center mx-3 my-2"  name='border' style="width: 300px; height: 50px;">{{i.time}}</textarea>.<br>
+    {% endfor %}
+    
+    {% endblock %}
